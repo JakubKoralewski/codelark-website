@@ -1,11 +1,18 @@
 /* Navbar */
 .navbar {
-    background-color: var(--main-color);
+    background-color: transparent;
     padding: 20px 0;
+    transition: all 0.5s ease; 
+}
+
+.navbar .navbar-shrink {
+    box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+    background-color: var(--main-color);
+    padding: 10px 0;
 }
 
 .navbar > .container {
-    padding: 15px 0;
+    padding: 0 15px;
 }
 
 .navbar .navbar-brand {
@@ -50,6 +57,9 @@
     min-height: 100vh;
     padding: 150px 0;
     background-color: var(--main-to-dark-color);
+    border-radius: 0 0 200px 0 ;
+    position: relative;
+    z-index: 1;
 }
 
 .home-text h1{
@@ -67,19 +77,55 @@
     font-weight: 300;
 }
 
+.home .home-btn {
+    margin-top: 40px;
+}
+
 .home-img img{
     max-width: 250px;
     width: 100%;
+    /* box-shadow: var(--shadow-black-100);
+    border-radius: 32px; */
+    animation: bounceTop_01 5s ease infinite;
 }
 
-.btn-1 {
-    background-color: #FFF;
-    padding: 12px 30px;
-    border: 5px solid red;
-    border-radius: 30px;
-    color: var(--main-color);
+.home-img {
+    position: relative;
+}
+
+.home-img .circle {
+    position: absolute;
+    z-index: 1;
+    height: 400px;
+    width: 400px;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.home-img .circle::before {
+    content: '';
+    position: absolute;
+    height: 60px;
+    width: 60px;
+    background-color: rgba(255,255,255,0.4);
+    border-radius: 50%;
+    left: 30px;
+    top: 30px;
+    transform-origin: 170px 170px;
+    animation: spin_01 10s linear infinite;
+}
+
+.home .home-btn .gh-btn {
+    margin-left: 30px;
+    padding: 0;
     font-size: 16px;
-    text-transform: all 0.5s ease;
-    transition: all 0.5s ease;
+    animation: pulse_01 2s ease infinite;
+}
+
+.home .home-btn .gh-btn:hover {
+    animation: none;
     box-shadow: var(--shadow-black-300);
 }
