@@ -1,10 +1,8 @@
-$(document).ready(function() {
-    $(window).on("scroll",function() {
-        if($(this).scrollTop() > 90) {
-            $(".navbar").addClass("navbar-shrink");
-        }
-        else {
-            $(".navbar").removeClass("navbar-shrink");
-        }
-    })
+const navBar = document.querySelector(".navbar")
+window.addEventListener('scroll', () => {
+    if(window.scrollTop() > 90) {
+        navBar.classList.add("navbar-shrink")
+    } else {
+        navBar.classList.remove("navbar-shrink")
+    }
 })
